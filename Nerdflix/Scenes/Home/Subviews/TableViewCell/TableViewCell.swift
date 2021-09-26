@@ -9,33 +9,34 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     static let identifier = "TableViewCell"
-    
-    private var movies: [Movie] = [] {
-        didSet{
-            cvMovies.reloadData()
-        }
-    }
+    private var movieCollection: MoviesCollection?
     
     @IBOutlet weak var cvMovies: UICollectionView!
- 
+    @IBOutlet weak var lbTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionViews()
     }
-
+    
+    @IBAction func showMore(_ sender: UIButton) {
+        print("Present show more for \(movieCollection?.title ?? "")")
+    }
+    
     fileprivate func setupCollectionViews(){
         cvMovies.dataSource = self
-        cvMovies.delegate = self
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 200, height: 260)
+        layout.itemSize = CGSize(width: 200, height: 240)
         cvMovies.setCollectionViewLayout(layout, animated: true)
         cvMovies.register(UINib(nibName: MovieCollectionViewCell.identifier, bundle: nil),
                           forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
     }
     
-    func setMovies(movies: [Movie]){
-        self.movies = movies
+    func setMovies(movieCollection: MoviesCollection){
+        self.movieCollection = movieCollection
+        lbTitle.text = movieCollection.title
+        cvMovies.reloadData()
     }
 }
 
@@ -43,18 +44,17 @@ extension TableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return movieCollection?.movies.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = cvMovies.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier,
                                                 for: indexPath) as? MovieCollectionViewCell
-        cell?.set(movie: movies[indexPath.item])
+        
+        if let movieCollection = movieCollection{
+            cell?.set(movie: movieCollection.movies[indexPath.item])
+        }
         return cell ?? UICollectionViewCell(frame: .zero)
     }
-}
-
-extension TableViewCell: UICollectionViewDelegate {
-    
 }

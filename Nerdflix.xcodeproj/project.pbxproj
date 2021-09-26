@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2E88B87B26FF791E00A7704A /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B87A26FF791E00A7704A /* APIUrl.swift */; };
-		2E88B87D26FF81CA00A7704A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B87C26FF81CA00A7704A /* NetworkService.swift */; };
 		2E88B88026FF834600A7704A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B87F26FF834600A7704A /* Movie.swift */; };
 		2E88B88226FF887900A7704A /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B88126FF887900A7704A /* Actor.swift */; };
-		2E88B88526FF8B8000A7704A /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B88426FF8B8000A7704A /* MovieList.swift */; };
+		2E88B88526FF8B8000A7704A /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B88426FF8B8000A7704A /* MoviesResponse.swift */; };
+		2E88B88726FFCE2700A7704A /* MoviesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B88626FFCE2700A7704A /* MoviesCollection.swift */; };
 		2E9CBDF726FE9DFB00D97B28 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2E9CBDF626FE9DFB00D97B28 /* Kingfisher */; };
 		2E9CBDFA26FEA95200D97B28 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 2E9CBDF926FEA95200D97B28 /* SkeletonView */; };
 		2EB0279526FF76EC00019D3A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB0279326FF76EC00019D3A /* TableViewCell.swift */; };
@@ -29,10 +29,10 @@
 
 /* Begin PBXFileReference section */
 		2E88B87A26FF791E00A7704A /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
-		2E88B87C26FF81CA00A7704A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2E88B87F26FF834600A7704A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2E88B88126FF887900A7704A /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
-		2E88B88426FF8B8000A7704A /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		2E88B88426FF8B8000A7704A /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
+		2E88B88626FFCE2700A7704A /* MoviesCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollection.swift; sourceTree = "<group>"; };
 		2EB0279326FF76EC00019D3A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2EB0279426FF76EC00019D3A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		2EDA487126FE852500DA4BF2 /* Nerdflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nerdflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				2E88B87A26FF791E00A7704A /* APIUrl.swift */,
-				2E88B87C26FF81CA00A7704A /* NetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -75,7 +74,8 @@
 			children = (
 				2E88B87F26FF834600A7704A /* Movie.swift */,
 				2E88B88126FF887900A7704A /* Actor.swift */,
-				2E88B88426FF8B8000A7704A /* MovieList.swift */,
+				2E88B88426FF8B8000A7704A /* MoviesResponse.swift */,
+				2E88B88626FFCE2700A7704A /* MoviesCollection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,9 +274,9 @@
 				2E88B87B26FF791E00A7704A /* APIUrl.swift in Sources */,
 				2EDA487526FE852500DA4BF2 /* AppDelegate.swift in Sources */,
 				2E88B88026FF834600A7704A /* Movie.swift in Sources */,
-				2E88B87D26FF81CA00A7704A /* NetworkService.swift in Sources */,
 				2EDA488B26FE85F300DA4BF2 /* HomeViewController.swift in Sources */,
-				2E88B88526FF8B8000A7704A /* MovieList.swift in Sources */,
+				2E88B88726FFCE2700A7704A /* MoviesCollection.swift in Sources */,
+				2E88B88526FF8B8000A7704A /* MoviesResponse.swift in Sources */,
 				2EDA489726FE8F1600DA4BF2 /* HomeViewModel.swift in Sources */,
 				2EB0279526FF76EC00019D3A /* TableViewCell.swift in Sources */,
 				2EDA489126FE883E00DA4BF2 /* MovieCollectionViewCell.swift in Sources */,

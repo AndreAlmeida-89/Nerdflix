@@ -28,9 +28,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     private func setupUI(){
         lbMovieTitle.text = movie?.title
         ivMovie.kf.setImage(with: movie?.image)
+        ivMovie.layer.cornerRadius = 20
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let movie = movie else { return }
         print("filme escolhido: \(movie.title)")
     }

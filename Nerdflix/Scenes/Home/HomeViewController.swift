@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
         bindEvents()
         setupNavigation()
         setupTableView()
-        viewModel.getPopularMovies()
+        viewModel.getMovies()
     }
     
     fileprivate func setupTableView(){
@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     }
     
     fileprivate func setupNavigation(){
+        title = "Nerdflix"
         navigationController?.navigationBar.barTintColor = .darkGray
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
@@ -57,7 +58,7 @@ extension HomeViewController: UITableViewDataSource{
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tvHome.dequeueReusableCell(withIdentifier: TableViewCell.identifier,
                                               for: indexPath) as? TableViewCell
-        cell?.setMovies(movies: viewModel.moviesLists[indexPath.row])
+        cell?.setMovies(movieCollection: viewModel.moviesLists[indexPath.row])
         return cell ?? UITableViewCell(frame: .zero)
     }
 }

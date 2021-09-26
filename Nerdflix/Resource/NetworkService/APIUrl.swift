@@ -9,7 +9,7 @@ import Foundation
 
 
 struct APIUrl{
-    private static let _token = "k_itv91nl9"
+    private static let _token = "k_5zhyzkpo"
     private static let _baseUrl = "https://imdb-api.com/pt/API"
     
     static var token: String {
@@ -22,10 +22,13 @@ struct APIUrl{
 }
 
 
-enum Endpoint {
-    case Top250Movies
-    case MostPopularMovies
+enum Endpoint: String {
+    case Top250Movies = "Top 250 Filmes"
+    case MostPopularMovies = "Mais Populares"
+    case InTheaters = "Nos cinemas"
+    case ComingSoon = "Em Breve"
     case MovieDetail
+    
     
     func ulrString(id: String? = nil) -> String {
         switch self {
@@ -35,11 +38,16 @@ enum Endpoint {
             return APIUrl.baseUrl + "/MostPopularMovies/" + APIUrl.token
         case .MovieDetail:
             return APIUrl.baseUrl + "/Title/" + APIUrl.token + "/\(id ?? "")"
+        case .InTheaters:
+            return APIUrl.baseUrl + "/InTheaters/" + APIUrl.token
+        case .ComingSoon:
+            return APIUrl.baseUrl + "/ComingSoon/" + APIUrl.token
         }
     }
 }
 
-
+//_token = "k_itv91nl9"
+//k_5zhyzkpo
 //https://imdb-api.com/en/API/Top250Movies/k_3g4a43n5
 //https://imdb-api.com/en/API/Top250TVs/k_3g4a43n5
 //https://imdb-api.com/en/API/MostPopularMovies/k_3g4a43n5

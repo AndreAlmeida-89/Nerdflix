@@ -12,18 +12,24 @@ class HomeViewModel {
     
     var updateLayout: (()->Void)?
     
-    private(set) var moviesLists: [[Movie]] = []
+    private(set) var moviesLists: [MoviesCollection] = []
     
-    func getPopularMovies() {
-        AF.request(Endpoint.Top250Movies.ulrString(), method: .get).responseJSON { response in
+    func getMovies() {
+        getMovies(at: .ComingSoon)
+        getMovies(at: .InTheaters)
+        getMovies(at: .MostPopularMovies)
+        getMovies(at: .Top250Movies)
+    }
+    
+    private func getMovies(at endpoint: Endpoint) {
+        AF.request(endpoint.ulrString(), method: .get).responseJSON { response in
             guard let data = response.data else { return }
-            
-          
             let decoder = JSONDecoder()
             do {
-                let moviesResponse = try decoder.decode(MovieList.self, from: data)
-                self.moviesLists.append(moviesResponse.items)
-                print(self.moviesLists)
+                let moviesResponse = try decoder.decode(MoviesResponse.self, from: data)
+                let movieCollection = MoviesCollection(movies: moviesResponse.items,
+                                                      title: endpoint.rawValue)
+                self.moviesLists.append(movieCollection)
                 self.updateLayout?()
             } catch {
                 debugPrint("Json parsin error: ", error)
