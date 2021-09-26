@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E828FCC2700C57600310692 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E828FCB2700C57600310692 /* Header.xib */; };
+		2E828FCE2700C5A100310692 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E828FCD2700C5A100310692 /* Header.swift */; };
 		2E88B87B26FF791E00A7704A /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B87A26FF791E00A7704A /* APIUrl.swift */; };
 		2E88B88026FF834600A7704A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B87F26FF834600A7704A /* Movie.swift */; };
 		2E88B88226FF887900A7704A /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E88B88126FF887900A7704A /* Actor.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E828FCB2700C57600310692 /* Header.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
+		2E828FCD2700C5A100310692 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		2E88B87A26FF791E00A7704A /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		2E88B87F26FF834600A7704A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2E88B88126FF887900A7704A /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
@@ -61,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E828FCA2700C55600310692 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				2E828FCB2700C57600310692 /* Header.xib */,
+				2E828FCD2700C5A100310692 /* Header.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		2E88B87926FF78FD00A7704A /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 		2EDA488D26FE880500DA4BF2 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				2E828FCA2700C55600310692 /* Header */,
 				2EB0278E26FF756500019D3A /* TableViewCell */,
 			);
 			path = Subviews;
@@ -260,6 +274,7 @@
 				2EB0279626FF76EC00019D3A /* TableViewCell.xib in Resources */,
 				2EDA488126FE852800DA4BF2 /* LaunchScreen.storyboard in Resources */,
 				2EDA487E26FE852800DA4BF2 /* Assets.xcassets in Resources */,
+				2E828FCC2700C57600310692 /* Header.xib in Resources */,
 				2EDA488C26FE85F300DA4BF2 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +291,7 @@
 				2E88B88026FF834600A7704A /* Movie.swift in Sources */,
 				2EDA488B26FE85F300DA4BF2 /* HomeViewController.swift in Sources */,
 				2E88B88726FFCE2700A7704A /* MoviesCollection.swift in Sources */,
+				2E828FCE2700C5A100310692 /* Header.swift in Sources */,
 				2E88B88526FF8B8000A7704A /* MoviesResponse.swift in Sources */,
 				2EDA489726FE8F1600DA4BF2 /* HomeViewModel.swift in Sources */,
 				2EB0279526FF76EC00019D3A /* TableViewCell.swift in Sources */,

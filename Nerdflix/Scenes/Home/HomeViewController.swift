@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tvHome: UITableView!
     let viewModel = HomeViewModel()
+    @IBOutlet weak var mainMovieView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,4 +62,23 @@ extension HomeViewController: UITableViewDataSource{
         cell?.setMovies(movieCollection: viewModel.moviesLists[indexPath.row])
         return cell ?? UITableViewCell(frame: .zero)
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        if let url = URL(string: "https://imdb-api.com/images/original/MV5BMTUyNTkxODIxN15BMl5BanBnXkFtZTgwOTU2MDAwMTE@._V1_Ratio0.7273_AL_.jpg"){
+//            
+//            let movie = Movie(id: "movie 2913913",
+//                             title: "Inception",
+//                             image: url)
+//            let view = Header()
+//            view.set(movie: movie)
+//            return view
+//        }
+//        
+//        return UIView(frame: .zero)
+//        
+//    }
+//    
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 400
+//    }
 }

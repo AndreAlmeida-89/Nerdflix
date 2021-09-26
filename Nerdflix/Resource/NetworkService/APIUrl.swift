@@ -9,7 +9,7 @@ import Foundation
 
 
 struct APIUrl{
-    private static let _token = "k_5zhyzkpo"
+    private static let _token = "k_itv91nl9"
     private static let _baseUrl = "https://imdb-api.com/pt/API"
     
     static var token: String {
