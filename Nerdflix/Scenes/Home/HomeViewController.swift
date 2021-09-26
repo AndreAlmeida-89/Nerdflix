@@ -11,7 +11,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tvHome: UITableView!
     let viewModel = HomeViewModel()
-    @IBOutlet weak var mainMovieView: UIView!
+    
+    @IBOutlet weak var constTableViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,13 @@ class HomeViewController: UIViewController {
     fileprivate func bindEvents(){
         viewModel.updateLayout = { [weak self] in
             self?.tvHome.reloadData()
+            self?.adjustTableViewHeight()
         }
+    }
+    
+    fileprivate func adjustTableViewHeight(){
+        let height = tvHome.contentSize.height
+        constTableViewHeight.constant = height
     }
     
 }
