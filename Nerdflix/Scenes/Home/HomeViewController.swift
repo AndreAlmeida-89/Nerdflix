@@ -9,18 +9,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var tvHome: UITableView!
+ 
     let viewModel = HomeViewModel()
     
+    @IBOutlet weak var headerView: Header!
     @IBOutlet weak var constTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var tvHome: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         bindEvents()
         setupNavigation()
         setupTableView()
+        setupHeader()
+        viewModel.getMainMovie()
         viewModel.getMovies()
+        
     }
+    
     
     fileprivate func setupTableView(){
         tvHome.register(UINib(nibName: TableViewCell.identifier,
@@ -36,12 +42,22 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    fileprivate func setupHeader(){
+        guard let movie = viewModel.mainMovie else {return}
+        headerView.set(movie: movie)
     }
     
     fileprivate func bindEvents(){
-        viewModel.updateLayout = { [weak self] in
+        viewModel.updateTableView = { [weak self] in
             self?.tvHome.reloadData()
             self?.adjustTableViewHeight()
+        }
+        
+        viewModel.updateHeader = { [weak self] in
+            self?.setupHeader()
         }
     }
     
@@ -66,26 +82,22 @@ extension HomeViewController: UITableViewDataSource{
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tvHome.dequeueReusableCell(withIdentifier: TableViewCell.identifier,
                                               for: indexPath) as? TableViewCell
+        cell?.setDelegate(self)
         cell?.setMovies(movieCollection: viewModel.moviesLists[indexPath.row])
         return cell ?? UITableViewCell(frame: .zero)
     }
+}
+
+
+extension HomeViewController: MovieCollectionViewCellDelegate{
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        if let url = URL(string: "https://imdb-api.com/images/original/MV5BMTUyNTkxODIxN15BMl5BanBnXkFtZTgwOTU2MDAwMTE@._V1_Ratio0.7273_AL_.jpg"){
-//            
-//            let movie = Movie(id: "movie 2913913",
-//                             title: "Inception",
-//                             image: url)
-//            let view = Header()
-//            view.set(movie: movie)
-//            return view
-//        }
-//        
-//        return UIView(frame: .zero)
-//        
-//    }
-//    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 400
-//    }
+    func showMovieDetail(with id: String) {
+        let movieDetailViewController = MovieDetailViewController(movieId: id)
+        navigationController?.pushViewController(movieDetailViewController, animated: true)
+    }
+    
+    func showSeeMore(with: MoviesCollection){
+        
+    }
+
 }

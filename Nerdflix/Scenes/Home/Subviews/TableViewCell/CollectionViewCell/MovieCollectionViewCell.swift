@@ -8,8 +8,13 @@
 import UIKit
 import Kingfisher
 
+protocol MovieCollectionViewCellDelegate: AnyObject{
+    func showMovieDetail(with id: String)
+    func showSeeMore(with: MoviesCollection)
+}
+
 class MovieCollectionViewCell: UICollectionViewCell {
-    
+    private var delegate: MovieCollectionViewCellDelegate?
     static let identifier = "MovieCollectionViewCell"
     private var movie: Movie?
     
@@ -25,14 +30,19 @@ class MovieCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
     
+    func setDelegate(delegate: MovieCollectionViewCellDelegate?){
+        self.delegate = delegate
+    }
+    
     private func setupUI(){
         lbMovieTitle.text = movie?.title
         ivMovie.kf.setImage(with: movie?.image)
-        ivMovie.layer.cornerRadius = 20
+        ivMovie.layer.cornerRadius = 5
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let movie = movie else { return }
         print("filme escolhido: \(movie.title)")
+        delegate?.showMovieDetail(with: movie.id)
     }
 }

@@ -21,13 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="236" height="300"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-Zl-dxd">
-                                <rect key="frame" x="10" y="10" width="216" height="200"/>
+                                <rect key="frame" x="44.5" y="10" width="147" height="210"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="NB9-4n-Lj6"/>
+                                    <constraint firstAttribute="width" secondItem="cUm-Zl-dxd" secondAttribute="height" multiplier="7:10" id="EnK-nU-MS2"/>
+                                    <constraint firstAttribute="height" constant="210" id="NB9-4n-Lj6"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdB-Al-dBq">
-                                <rect key="frame" x="20" y="214" width="216" height="86"/>
+                                <rect key="frame" x="44.5" y="224" width="187.5" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -39,13 +40,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cUm-Zl-dxd" firstAttribute="top" secondItem="joR-NV-nMC" secondAttribute="top" constant="10" id="3PV-Z3-3WJ"/>
-                            <constraint firstAttribute="bottom" secondItem="YdB-Al-dBq" secondAttribute="bottom" id="AAW-y8-6io"/>
-                            <constraint firstItem="cUm-Zl-dxd" firstAttribute="leading" secondItem="joR-NV-nMC" secondAttribute="leading" constant="10" id="Iud-hl-npQ"/>
-                            <constraint firstAttribute="trailing" secondItem="YdB-Al-dBq" secondAttribute="trailing" id="O4j-gF-gdw"/>
-                            <constraint firstAttribute="bottom" secondItem="YdB-Al-dBq" secondAttribute="bottom" id="Pg2-rL-hgm"/>
-                            <constraint firstItem="YdB-Al-dBq" firstAttribute="leading" secondItem="cUm-Zl-dxd" secondAttribute="leading" constant="10" id="ZNe-U5-10i"/>
-                            <constraint firstAttribute="trailing" secondItem="cUm-Zl-dxd" secondAttribute="trailing" constant="10" id="f4Y-dF-KoM"/>
-                            <constraint firstItem="YdB-Al-dBq" firstAttribute="top" secondItem="cUm-Zl-dxd" secondAttribute="bottom" constant="4" id="vxO-IW-KnT"/>
+                            <constraint firstItem="YdB-Al-dBq" firstAttribute="top" secondItem="cUm-Zl-dxd" secondAttribute="bottom" constant="4" id="4yt-61-1y0"/>
+                            <constraint firstAttribute="trailing" secondItem="YdB-Al-dBq" secondAttribute="trailing" constant="4" id="epf-W7-tyE"/>
+                            <constraint firstAttribute="bottom" secondItem="YdB-Al-dBq" secondAttribute="bottom" constant="4" id="gBo-SR-QW4"/>
+                            <constraint firstItem="YdB-Al-dBq" firstAttribute="leading" secondItem="cUm-Zl-dxd" secondAttribute="leading" id="rZm-NL-aaA"/>
+                            <constraint firstItem="cUm-Zl-dxd" firstAttribute="centerX" secondItem="joR-NV-nMC" secondAttribute="centerX" id="zPh-3J-fWZ"/>
                         </constraints>
                     </view>
                 </subviews>

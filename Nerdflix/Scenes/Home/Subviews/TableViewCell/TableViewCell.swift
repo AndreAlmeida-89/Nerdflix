@@ -10,6 +10,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
     static let identifier = "TableViewCell"
     private var movieCollection: MoviesCollection?
+    private var delegate: MovieCollectionViewCellDelegate?
     
     @IBOutlet weak var cvMovies: UICollectionView!
     @IBOutlet weak var lbTitle: UILabel!
@@ -38,6 +39,10 @@ class TableViewCell: UITableViewCell {
         lbTitle.text = movieCollection.title
         cvMovies.reloadData()
     }
+    
+    func setDelegate(_ delegate: MovieCollectionViewCellDelegate){
+        self.delegate = delegate
+    }
 }
 
 extension TableViewCell: UICollectionViewDataSource {
@@ -51,7 +56,7 @@ extension TableViewCell: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = cvMovies.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier,
                                                 for: indexPath) as? MovieCollectionViewCell
-        
+        cell?.setDelegate(delegate: self.delegate)
         if let movieCollection = movieCollection{
             cell?.set(movie: movieCollection.movies[indexPath.item])
         }

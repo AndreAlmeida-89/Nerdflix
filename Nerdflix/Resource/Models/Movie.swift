@@ -11,8 +11,9 @@ struct Movie: Codable {
     let id: String
     let title: String
     let image: URL
-//    let plotLocal: String?
-//    let actorList: [Actor]?
+    let plotLocal: String?
+    let actorList: [Actor]?
+    let stars: String?
 }
 
 

@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Header" customModule="Nerdflix" customModuleProvider="target">
             <connections>
                 <outlet property="ivPoster" destination="zTY-RI-Qn6" id="e1Q-ZL-q9y"/>
+                <outlet property="lbHeader" destination="3yG-LY-EPG" id="yjY-rk-i0D"/>
+                <outlet property="lbStars" destination="nqQ-eU-P4W" id="QTN-br-Vxq"/>
                 <outlet property="lbTitle" destination="s9k-3t-r8b" id="o7f-KE-fpo"/>
             </connections>
         </placeholder>
