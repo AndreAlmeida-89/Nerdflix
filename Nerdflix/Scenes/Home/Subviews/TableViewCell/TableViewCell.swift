@@ -11,7 +11,7 @@ class TableViewCell: UITableViewCell {
     static let identifier = "TableViewCell"
     private var movieCollection: MoviesCollection?
     private var delegate: MovieCollectionViewCellDelegate?
-    
+
     @IBOutlet weak var cvMovies: UICollectionView!
     @IBOutlet weak var lbTitle: UILabel!
     
